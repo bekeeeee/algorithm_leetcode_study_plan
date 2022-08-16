@@ -18,7 +18,7 @@ export class QueueTs<T> {
     this.size = 0;
   }
   enqueue(val: T) {
-    var newNode = new QueueNode<T>(val);
+    let newNode = new QueueNode<T>(val);
     if (!this.first) {
       this.first = newNode!;
       this.last = newNode;
@@ -32,7 +32,7 @@ export class QueueTs<T> {
   dequeue() {
     if (!this.first) return null;
 
-    var temp = this.first;
+    let temp = this.first;
     if (this.first === this.last) {
       this.last = null;
     }

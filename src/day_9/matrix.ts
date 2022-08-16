@@ -22,12 +22,12 @@ function updateMatrix(mat: number[][]): number[][] {
     [1, 0],
     [-1, 0],
   ] as const;
-
   while (queue.size > 0) {
     for (let i = 0; i < queue.size; i++) {
       let currentPos: [number, number] = queue.dequeue()!;
       let currX = currentPos[0];
       let currY = currentPos[1];
+
       for (let dir of dirs) {
         let x = currX + dir[0];
         let y = currY + dir[1];

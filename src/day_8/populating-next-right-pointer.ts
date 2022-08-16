@@ -34,27 +34,27 @@ class NextNode {
 
 /*
 
-               1
+              1
         
-         2           3
+         2        3
     
-    4       5     6      7
+     4       5   6       7
 
 
 */
 function connect(root: NextNode | null): NextNode | null {
   if (root === null) return root;
 
-  let leftNode = root;
-  while (leftNode.left !== null) {
-    let head = leftNode;
+  let _root = root;
+  while (_root.left !== null) {
+    let head = _root;
     while (head !== null) {
       head.left!.next = head?.right!;
       if (head.next !== null) head.right!.next = head.next?.left;
 
       head = head.next!;
     }
-    leftNode = leftNode.left;
+    _root = _root.left;
   }
   return root;
 }
