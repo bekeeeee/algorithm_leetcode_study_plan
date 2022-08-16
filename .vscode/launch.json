@@ -5,6 +5,13 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "type": "java",
+      "name": "Launch JavaAlg",
+      "request": "launch",
+      "mainClass": "JavaAlg",
+      "projectName": "algorithm-leetcode-study-plan-1_de6c417a"
+    },
+    {
       "type": "pwa-node",
       "request": "launch",
       "name": "Debug Typescript",

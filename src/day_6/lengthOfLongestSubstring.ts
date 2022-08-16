@@ -8,8 +8,13 @@ function lengthOfLongestSubstring(s: string): number {
     }
     map[s[i]] = i;
     max = Math.max(max, i - start + 1);
+    console.log("char: " + s[i]);
+    console.log("map: ", JSON.stringify(map));
+    console.log("start: ", start);
+    console.log("max: ", max);
+    console.log("---------------------------------------");
   }
   return max;
 }
 
-console.log(lengthOfLongestSubstring("abccd"));
+console.log(lengthOfLongestSubstring("abccdfga"));
