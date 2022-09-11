@@ -39,9 +39,9 @@ function searchInsert(
   }
   if (nums[middleIndex] < target) {
     return searchInsert(nums, target, middleIndex + 1, end);
-  } else if (nums[middleIndex] > target)
+  } else if (nums[middleIndex] > target) {
     return searchInsert(nums, target, start, middleIndex - 1);
-  else return middleIndex;
+  } else return middleIndex;
 }
 
-console.log(searchInsert([1,3,5,6],0))
+console.log(searchInsert([1, 3, 5, 6], 0));

@@ -37,7 +37,7 @@ function search(
   let middleIndex = Math.floor((end + start) / 2);
   console.log("middleIndex: ", middleIndex);
   if (start > end) return -1;
-  if (nums[middleIndex] < target ) {
+  if (nums[middleIndex] < target) {
     return search(nums, target, middleIndex + 1, end);
   } else if (nums[middleIndex] > target)
     return search(nums, target, start, middleIndex - 1);

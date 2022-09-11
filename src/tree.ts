@@ -8,12 +8,13 @@ export class TreeNode {
     this.right = right === undefined ? null : right;
   }
   static BFS(root: TreeNode | null) {
-    var node: TreeNode = root!,
+    let node: TreeNode = root!,
       data: number[] = [],
       queue: TreeNode[] = [];
     queue.push(node);
 
     while (queue.length) {
+      console.log("queue", queue);
       node = queue.shift()!;
       data.push(node.value);
       if (node.left) queue.push(node.left);
@@ -23,6 +24,13 @@ export class TreeNode {
   }
 }
 
+let leftTree = new TreeNode(
+  2,
+  new TreeNode(3, new TreeNode(5, null, null), new TreeNode(6, null, null)),
+  new TreeNode(4, new TreeNode(7, null, null), new TreeNode(8, null, null))
+);
+console.log(TreeNode.BFS(leftTree));
+
 class BinarySearchTree {
   root: TreeNode | null;
 
@@ -30,12 +38,12 @@ class BinarySearchTree {
     this.root = null;
   }
   insert(value: number) {
-    var newNode = new TreeNode(value);
+    let newNode = new TreeNode(value);
     if (this.root === null) {
       this.root = newNode;
       return this;
     }
-    var current = this.root;
+    let current = this.root;
     while (true) {
       if (value === current.value) return undefined;
       if (value < current.value) {
@@ -55,7 +63,7 @@ class BinarySearchTree {
   }
   find(value: number) {
     if (this.root === null) return false;
-    var current = this.root!,
+    let current = this.root!,
       found = false;
     while (current && !found) {
       if (value < current.value) {
@@ -71,7 +79,7 @@ class BinarySearchTree {
   }
   contains(value: number) {
     if (this.root === null) return false;
-    var current = this.root,
+    let current = this.root,
       found = false;
     while (current && !found) {
       if (value < current.value) {
@@ -85,7 +93,7 @@ class BinarySearchTree {
     return false;
   }
   BFS() {
-    var node: TreeNode = this.root!,
+    let node: TreeNode = this.root!,
       data: number[] = [],
       queue: TreeNode[] = [];
     queue.push(node);
@@ -100,7 +108,7 @@ class BinarySearchTree {
   }
 }
 
-var tree = new BinarySearchTree();
+let tree = new BinarySearchTree();
 tree.insert(10);
 tree.insert(6);
 tree.insert(15);

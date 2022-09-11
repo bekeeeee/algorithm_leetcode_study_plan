@@ -4,6 +4,7 @@ function twoSum(nums: number[], target: number): number[] {
     console.log("hash: " + JSON.stringify(hash));
 
     if (nums[i] in hash) return [hash[nums[i]] + 1, i + 1];
+    
     hash[target - nums[i]] = i;
   }
 

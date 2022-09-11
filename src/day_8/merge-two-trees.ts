@@ -33,9 +33,25 @@ function mergeTrees(
   return reTree;
 }
 
-let leftTree = new TreeNode(5, null, null);
+let leftTree = new TreeNode(
+  2,
+  new TreeNode(3, new TreeNode(5, null, null), new TreeNode(6, null, null)),
+  new TreeNode(4, new TreeNode(7, null, null), new TreeNode(8, null, null))
+);
 let rightTree = new TreeNode(6, null, null);
 
-let root1 = new TreeNode(4, leftTree, rightTree);
+let root1 = new TreeNode(1, leftTree, leftTree);
 
 console.log(JSON.stringify(mergeTrees(root1, root1)));
+
+/*
+              1
+            
+            2    
+        3      4
+      5   6  7   8
+
+
+
+
+*/
